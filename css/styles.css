@@ -549,6 +549,230 @@ p:last-child { margin-bottom: 0; }
 }
 .artistic-item i { color: var(--accent); }
 
+/* ===== Language toggle ===== */
+.lang-toggle {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+.lang-btn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.28rem 0.7rem;
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  transition: all 0.2s var(--ease);
+}
+.lang-btn:hover,
+.lang-btn.active {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #fff;
+}
+
+/* ===== Skill FA icons ===== */
+.skill-fa-icon {
+  font-size: 2rem;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+}
+
+/* ===== Projects ===== */
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.project-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 32px var(--accent-glow);
+}
+.featured-project {
+  border-color: rgba(99, 102, 241, 0.25);
+  background: rgba(99, 102, 241, 0.03);
+}
+.project-header {
+  padding: 1.5rem 1.75rem 0;
+}
+.project-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.65rem;
+}
+.project-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.project-abbr {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  background: var(--accent-dark);
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+.project-tagline {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.project-body {
+  padding: 1.25rem 1.75rem 1.5rem;
+}
+.case-study-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.case-block {
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 1.1rem;
+}
+.case-block h4 {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.case-block p {
+  font-size: 0.845rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+.project-tech { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+/* ===== Lab ===== */
+.section-intro {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: -1.25rem;
+  margin-bottom: 1.75rem;
+}
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.lab-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  display: flex;
+  gap: 1rem;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.lab-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 24px var(--accent-glow);
+  transform: translateY(-2px);
+}
+.lab-card-icon {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+.lab-card-body { flex: 1; }
+.lab-card-body h4 { font-size: 0.93rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+.lab-card-body > p { font-size: 0.84rem; color: var(--text-muted); margin-bottom: 0.75rem; line-height: 1.6; }
+
+/* ===== Contact CTA ===== */
+.contact-cta {
+  background: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, var(--surface) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: var(--radius);
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.contact-cta-text h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.45rem;
+}
+.contact-cta-text p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  max-width: 440px;
+}
+.contact-cta-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s var(--ease);
+  white-space: nowrap;
+}
+.cta-btn-primary {
+  background: var(--accent-dark);
+  color: #fff;
+  border: 1px solid var(--accent-dark);
+}
+.cta-btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.cta-btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+.cta-btn-secondary:hover {
+  background: var(--surface-2);
+  color: var(--text);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1100px) {
   .section { padding: 4rem 2.5rem; }
@@ -557,6 +781,8 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; }
   .edu-cert-grid { grid-template-columns: 1fr; }
+  .case-study-grid { grid-template-columns: 1fr; }
+  .contact-cta { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 768px) {
@@ -580,10 +806,15 @@ p:last-child { margin-bottom: 0; }
   .tl-header { flex-direction: column; gap: 0.4rem; }
   .sub-role-header { flex-direction: column; gap: 0.2rem; }
   .interests-grid { grid-template-columns: 1fr 1fr; }
+  .project-header { padding: 1.25rem 1.25rem 0; }
+  .project-body { padding: 1rem 1.25rem 1.25rem; }
+  .contact-cta { padding: 1.5rem; }
+  .contact-cta-actions { flex-wrap: wrap; }
 }
 
 @media (max-width: 480px) {
   .interests-grid { grid-template-columns: 1fr; }
   .contact-bar { flex-direction: column; gap: 0.35rem; }
   .edu-card-header { flex-direction: column; gap: 0.4rem; }
+  .lab-card { flex-direction: column; gap: 0.75rem; }
 }

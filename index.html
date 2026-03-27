@@ -26,9 +26,12 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="#about"      class="nav-link active"><i class="fas fa-user"></i>            About</a></li>
             <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i>       Experience</a></li>
+            <li><a href="#projects"   class="nav-link"><i class="fas fa-folder-open"></i>     Projects</a></li>
             <li><a href="#education"  class="nav-link"><i class="fas fa-graduation-cap"></i>  Education</a></li>
             <li><a href="#skills"     class="nav-link"><i class="fas fa-code"></i>             Skills</a></li>
+            <li><a href="#lab"        class="nav-link"><i class="fas fa-flask"></i>            Lab</a></li>
             <li><a href="#interests"  class="nav-link"><i class="fas fa-heart"></i>            Interests</a></li>
+            <li><a href="#contact"    class="nav-link"><i class="fas fa-paper-plane"></i>      Contact</a></li>
         </ul>
 
         <div class="sidebar-social">
@@ -41,6 +44,11 @@
             <a href="mailto:jvgm.dev@gmail.com" class="social-icon" title="Email">
                 <i class="fas fa-envelope"></i>
             </a>
+        </div>
+
+        <div class="lang-toggle">
+            <a href="index.html" class="lang-btn active">EN</a>
+            <a href="indexEs.html" class="lang-btn">ES</a>
         </div>
 
     </nav>
@@ -72,7 +80,7 @@
                     <div class="about-text">
                         <p class="lead">
                             Currently working as a <strong>ServiceNow Technical Lead at DXC Technology</strong>.
-                            A person who has decided to turn his hobby into a way of life.
+                            Turned a lifelong interest in software and systems into a career.
                         </p>
                         <p>
                             Lover of programming, design, photography, discovering the IoT, and the world inside machines.
@@ -84,9 +92,9 @@
                     <div class="top-skills-box">
                         <h3 class="box-label">Top Skills</h3>
                         <div class="skill-tags">
-                            <span class="tag">Solution Implementation</span>
-                            <span class="tag">Technical Support</span>
-                            <span class="tag">IT Service Management</span>
+                            <span class="tag">Solution Design</span>
+                            <span class="tag">ITSM / CSM Delivery</span>
+                            <span class="tag">Technical Leadership</span>
                         </div>
                     </div>
                 </div>
@@ -111,6 +119,7 @@
                                 </div>
                                 <span class="date-badge">Mar 2025 – Present</span>
                             </div>
+                            <p>Technical Lead embedded in a client delivery team, focused on senior development, technical governance, and solution design across ITSM and CSM workstreams.</p>
                         </div>
                     </div>
 
@@ -148,7 +157,7 @@
                                         <strong>ServiceNow ITSM Implementation Coordination</strong>
                                         <span class="date-small">Mar 2023 – Aug 2023</span>
                                     </div>
-                                    <p>Technical coordination for an ITSM module implementation in ServiceNow, providing architectural design and best practices, collaborating with cross-functional teams to ensure successful deployment.</p>
+                                    <p>Technical coordination for an ITSM module implementation in ServiceNow, contributing to solution design and best practices, collaborating with cross-functional teams to ensure successful deployment.</p>
                                 </div>
 
                                 <div class="sub-role">
@@ -201,6 +210,43 @@
                     </div>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <div class="section-inner">
+                <h2 class="section-title"><span class="accent-line"></span>Projects</h2>
+
+                <div class="project-card featured-project">
+                    <div class="project-header">
+                        <span class="project-label">Case Study</span>
+                        <h3 class="project-name">Data Visibility Engine <span class="project-abbr">DVE</span></h3>
+                        <p class="project-tagline">Configurable row-level security framework for ServiceNow</p>
+                    </div>
+                    <div class="project-body">
+                        <div class="case-study-grid">
+                            <div class="case-block">
+                                <h4><i class="fas fa-exclamation-circle"></i> Problem</h4>
+                                <p>Enterprise instances need fine-grained control over which records each user can see. Native ACLs are rigid and hard to maintain at scale - there was no reusable, admin-friendly way to enforce record-level visibility without writing custom code per use case.</p>
+                            </div>
+                            <div class="case-block">
+                                <h4><i class="fas fa-lightbulb"></i> Solution</h4>
+                                <p>Built a configurable Before Query Business Rule framework that enforces record-level visibility at query time. Supports multiple match types including User Criteria, uses server-side session caching for performance, and includes an admin UI for managing rules without scripting plus a simulation tool for testing visibility logic before deployment.</p>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="chip">Before Query Business Rules</span>
+                            <span class="chip">Session Cache</span>
+                            <span class="chip">GlideRecord</span>
+                            <span class="chip">User Criteria</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">Script Includes</span>
+                            <span class="chip">Admin UI</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -360,6 +406,18 @@
                                 <img src="assets/img/unity.svg" alt="Unity" />
                                 <span>Unity</span>
                             </div>
+                            <div class="skill-icon-item">
+                                <i class="fab fa-python skill-fa-icon"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-icon-item">
+                                <i class="fab fa-js skill-fa-icon"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-icon-item">
+                                <i class="fas fa-home skill-fa-icon"></i>
+                                <span>Home Assistant</span>
+                            </div>
                         </div>
                     </div>
 
@@ -368,13 +426,69 @@
                         <div class="skill-tags">
                             <span class="tag">Agile / Scrum</span>
                             <span class="tag">ITSM Best Practices</span>
-                            <span class="tag">Architectural Design</span>
+                            <span class="tag">Solution Design</span>
                             <span class="tag">Team Leadership</span>
                             <span class="tag">Cross-functional Collaboration</span>
                             <span class="tag">Client Communication</span>
                             <span class="tag">Linux</span>
                             <span class="tag">Git</span>
                             <span class="tag">IoT / Home Automation</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Lab -->
+        <section id="lab" class="section">
+            <div class="section-inner">
+                <h2 class="section-title"><span class="accent-line"></span>Lab &amp; Side Projects</h2>
+                <p class="section-intro">Personal projects that live outside work hours. Home automation, self-hosted services, and local AI.</p>
+
+                <div class="lab-grid">
+
+                    <div class="lab-card">
+                        <div class="lab-card-icon"><i class="fas fa-home"></i></div>
+                        <div class="lab-card-body">
+                            <h4>Smart Home Stack</h4>
+                            <p>Fully automated home running Home Assistant, Node-RED, ESPHome, and Zigbee. Custom automations backed by MariaDB, with dashboards and secure remote access.</p>
+                            <div class="tech-chips">
+                                <span class="chip">Home Assistant</span>
+                                <span class="chip">Node-RED</span>
+                                <span class="chip">ESPHome</span>
+                                <span class="chip">Zigbee</span>
+                                <span class="chip">MariaDB</span>
+                                <span class="chip">Raspberry Pi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lab-card">
+                        <div class="lab-card-icon"><i class="fas fa-brain"></i></div>
+                        <div class="lab-card-body">
+                            <h4>Local LLM &amp; Voice Assistant</h4>
+                            <p>Self-hosted Ollama instance running large language models on local hardware. Integrated into a distributed, fully offline voice assistant pipeline.</p>
+                            <div class="tech-chips">
+                                <span class="chip">Ollama</span>
+                                <span class="chip">Python</span>
+                                <span class="chip">Raspberry Pi</span>
+                                <span class="chip">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lab-card">
+                        <div class="lab-card-icon"><i class="fas fa-network-wired"></i></div>
+                        <div class="lab-card-body">
+                            <h4>Homelab &amp; Self-hosting</h4>
+                            <p>Raspberry Pi cluster with Tailscale VPN mesh for secure remote access. Self-managed services with a focus on privacy, control, and reliability.</p>
+                            <div class="tech-chips">
+                                <span class="chip">Tailscale</span>
+                                <span class="chip">Raspberry Pi</span>
+                                <span class="chip">Docker</span>
+                                <span class="chip">Linux</span>
+                            </div>
                         </div>
                     </div>
 
@@ -401,12 +515,12 @@
                     <div class="interest-card">
                         <div class="interest-icon"><i class="fas fa-camera"></i></div>
                         <h4>Photography</h4>
-                        <p>Passionate about photography, exploring different techniques, styles, and creative visual expression.</p>
+                        <p>Interested in photography and visual composition, mostly natural light and street.</p>
                     </div>
                     <div class="interest-card">
                         <div class="interest-icon"><i class="fab fa-linux"></i></div>
                         <h4>Linux &amp; Open Source</h4>
-                        <p>Linux enthusiast who customizes every tool available, always staying on the cutting edge of open source software.</p>
+                        <p>Linux enthusiast who customizes every tool in reach and follows open source closely.</p>
                     </div>
                     <div class="interest-card">
                         <div class="interest-icon"><i class="fas fa-leaf"></i></div>
@@ -425,6 +539,29 @@
                     <div class="artistic-item"><i class="fas fa-camera-retro"></i> Photography</div>
                     <div class="artistic-item"><i class="fas fa-drafting-compass"></i> Design</div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="section-inner">
+                <h2 class="section-title"><span class="accent-line"></span>Contact</h2>
+
+                <div class="contact-cta">
+                    <div class="contact-cta-text">
+                        <h3>Let's work together</h3>
+                        <p>Open to ServiceNow consulting, freelance engagements, and technical advisory. Based in Málaga, available remotely worldwide.</p>
+                    </div>
+                    <div class="contact-cta-actions">
+                        <a href="mailto:jvgm.dev@gmail.com" class="cta-btn cta-btn-primary">
+                            <i class="fas fa-envelope"></i> Send an email
+                        </a>
+                        <a href="https://www.linkedin.com/in/juanvdev/" target="_blank" class="cta-btn cta-btn-secondary">
+                            <i class="fab fa-linkedin-in"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
