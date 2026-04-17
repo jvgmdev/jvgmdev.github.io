@@ -1,0 +1,370 @@
+---
+---
+
+<section class="case-study section" id="case-study">
+  <div class="container">
+    <div class="case-study__card">
+      <!-- Left: Body -->
+      <div class="case-study__body">
+        <div class="case-study__tag">
+          <span class="case-study__diamond">◆</span> CASE STUDY
+        </div>
+
+        <h3 class="case-study__name">
+          Data Visibility Engine
+          <span class="case-study__badge">DVE</span>
+        </h3>
+
+        <p class="case-study__tagline">Configurable row-level security framework for ServiceNow</p>
+
+        <div class="case-study__grid">
+          <div class="case-study__block">
+            <div class="case-study__block-header">
+              <span class="case-study__diamond">◆</span> PROBLEM
+            </div>
+            <p>Enterprise instances need fine-grained control over which records each user can see. Native ACLs are rigid and hard to maintain at scale. There was no reusable, admin-friendly way to enforce record-level visibility without writing custom code per use case.</p>
+          </div>
+          <div class="case-study__block">
+            <div class="case-study__block-header">
+              <span class="case-study__diamond">◆</span> SOLUTION
+            </div>
+            <p>Built a configurable Before Query Business Rule framework that enforces record-level visibility at query time. Supports multiple match types including User Criteria, uses server-side session caching for performance, and includes an admin UI for managing rules without scripting plus a simulation tool for testing visibility logic before deployment.</p>
+          </div>
+        </div>
+
+        <div class="case-study__chips">
+          <span class="chip">Before Query Business Rules</span>
+          <span class="chip">Session Cache</span>
+          <span class="chip">GlideRecord</span>
+          <span class="chip">User Criteria</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Script Includes</span>
+          <span class="chip">Admin UI</span>
+        </div>
+      </div>
+
+      <!-- Right: Dark visual panel -->
+      <div class="case-study__panel">
+        <div class="case-study__panel-grid" aria-hidden="true"></div>
+
+        <div class="case-study__panel-bar">
+          <span>acl_runtime.js / DVE engine</span>
+          <div class="case-study__panel-dots">
+            <span class="case-study__dot case-study__dot--accent"></span>
+            <span class="case-study__dot"></span>
+            <span class="case-study__dot"></span>
+          </div>
+        </div>
+
+        <div class="case-study__diagram" id="dve-diagram">
+          <div class="case-study__row case-study__row--allow">
+            <span class="case-study__row-user">admin</span>
+            <span class="case-study__row-criteria">role = admin, all tables</span>
+            <span class="case-study__row-result case-study__row-result--allow">ALLOW</span>
+          </div>
+          <div class="case-study__row case-study__row--allow">
+            <span class="case-study__row-user">j.garcia</span>
+            <span class="case-study__row-criteria">dept = IT, incident + change</span>
+            <span class="case-study__row-result case-study__row-result--allow">ALLOW</span>
+          </div>
+          <div class="case-study__row case-study__row--deny">
+            <span class="case-study__row-user">m.lopez</span>
+            <span class="case-study__row-criteria">dept = HR, incident only</span>
+            <span class="case-study__row-result case-study__row-result--deny">DENY</span>
+          </div>
+          <div class="case-study__row case-study__row--allow">
+            <span class="case-study__row-user">s.chen</span>
+            <span class="case-study__row-criteria">criteria: group = CAB</span>
+            <span class="case-study__row-result case-study__row-result--allow">ALLOW</span>
+          </div>
+          <div class="case-study__row case-study__row--deny">
+            <span class="case-study__row-user">guest</span>
+            <span class="case-study__row-criteria">no criteria matched</span>
+            <span class="case-study__row-result case-study__row-result--deny">DENY</span>
+          </div>
+        </div>
+
+        <div class="case-study__panel-caption">
+          Simulation mode · press <code>R</code> to randomize
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .case-study__card {
+    background: var(--card);
+    border-radius: 28px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Left body */
+  .case-study__body {
+    padding: 44px;
+  }
+
+  .case-study__tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .case-study__diamond {
+    color: var(--accent);
+  }
+
+  .case-study__name {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .case-study__badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    background: var(--paper-2);
+    border-radius: 100px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .case-study__tagline {
+    font-size: 17px;
+    color: var(--ink-2);
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .case-study__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .case-study__block {
+    background: var(--paper-2);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+  }
+
+  .case-study__block-header {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .case-study__block p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  .case-study__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Right dark panel */
+  .case-study__panel {
+    background: linear-gradient(180deg, #2a2520 0%, #1a1714 100%);
+    color: #e8dfd0;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .case-study__panel-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(232, 223, 208, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232, 223, 208, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+
+  .case-study__panel-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(232, 223, 208, 0.5);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .case-study__panel-dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .case-study__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(232, 223, 208, 0.2);
+  }
+
+  .case-study__dot--accent {
+    background: var(--accent);
+  }
+
+  /* Diagram rows - see is:global style block below for these */
+  .case-study__diagram {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+
+  .case-study__panel-caption {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: rgba(232, 223, 208, 0.3);
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  .case-study__panel-caption code {
+    background: rgba(232, 223, 208, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .case-study__card {
+      grid-template-columns: 1fr;
+    }
+
+    .case-study__panel {
+      min-height: 360px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .case-study__body {
+      padding: 28px;
+    }
+
+    .case-study__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<style is:global>
+  .case-study__row {
+    display: grid;
+    grid-template-columns: 80px 1fr 60px;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+    transition: background 0.2s var(--ease);
+  }
+
+  .case-study__row--allow {
+    background: rgba(232, 223, 208, 0.06);
+    border: 1px solid rgba(232, 223, 208, 0.08);
+  }
+
+  .case-study__row--deny {
+    background: transparent;
+    border: 1px dashed rgba(232, 223, 208, 0.12);
+    opacity: 0.6;
+  }
+
+  .case-study__row-user {
+    font-weight: 500;
+    color: #e8dfd0;
+  }
+
+  .case-study__row-criteria {
+    color: rgba(232, 223, 208, 0.55);
+    font-size: 11px;
+  }
+
+  .case-study__row-result {
+    text-align: right;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  .case-study__row-result--allow {
+    color: var(--green);
+  }
+
+  .case-study__row-result--deny {
+    color: rgba(232, 223, 208, 0.3);
+  }
+</style>
+
+<script>
+  const users = [
+    { name: 'admin', criteria: 'role = admin, all tables', result: 'ALLOW' },
+    { name: 'j.garcia', criteria: 'dept = IT, incident + change', result: 'ALLOW' },
+    { name: 'm.lopez', criteria: 'dept = HR, incident only', result: 'DENY' },
+    { name: 's.chen', criteria: 'criteria: group = CAB', result: 'ALLOW' },
+    { name: 'guest', criteria: 'no criteria matched', result: 'DENY' },
+    { name: 'r.tanaka', criteria: 'role = itil, task tables', result: 'ALLOW' },
+    { name: 'k.weber', criteria: 'dept = Finance, cmdb_ci only', result: 'DENY' },
+    { name: 'a.patel', criteria: 'criteria: location = EU', result: 'ALLOW' },
+    { name: 'bot.sync', criteria: 'service account, no criteria', result: 'DENY' },
+    { name: 'l.martin', criteria: 'group = Service Desk', result: 'ALLOW' },
+    { name: 'd.novak', criteria: 'dept = Eng, change + problem', result: 'ALLOW' },
+    { name: 'c.reyes', criteria: 'contractor, kb_knowledge only', result: 'DENY' },
+  ];
+
+  function render(container: HTMLElement) {
+    const picked = [...users].sort(() => Math.random() - 0.5).slice(0, 5);
+    container.innerHTML = picked.map((u) => {
+      const type = u.result === 'ALLOW' ? 'allow' : 'deny';
+      return `<div class="case-study__row case-study__row--${type}">
+        <span class="case-study__row-user">${u.name}</span>
+        <span class="case-study__row-criteria">${u.criteria}</span>
+        <span class="case-study__row-result case-study__row-result--${type}">${u.result}</span>
+      </div>`;
+    }).join('');
+  }
+
+  const diagram = document.getElementById('dve-diagram')!;
+  render(diagram);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'r' || e.key === 'R') {
+      render(diagram);
+    }
+  });
+</script>

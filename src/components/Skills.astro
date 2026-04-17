@@ -1,0 +1,230 @@
+---
+const skillGroups = [
+  {
+    name: 'ServiceNow Platform',
+    skills: ['ITSM', 'CSM', 'PPM', 'CMDB', 'ServicePortal', 'Integration Hub', 'Flow Designer', 'Business Rules', 'Client Scripts', 'UI Actions', 'UI Policies', 'ACL', 'Script Includes', 'Reporting'],
+  },
+  {
+    name: 'Languages & Tools',
+    skills: ['JavaScript', 'Python', 'Java', 'C / C++ / C#', 'HTML', 'CSS', 'MySQL', 'Home Assistant', 'Linux', 'Git', 'Docker', 'Unity'],
+  },
+  {
+    name: 'Methodologies & Soft',
+    skills: ['Agile / Scrum', 'ITSM Best Practices', 'Solution Design', 'Team Leadership', 'Cross-functional Collaboration', 'Client Communication', 'IoT / Home Automation'],
+  },
+];
+
+const primarySkills = ['Solution Design', 'ITSM / CSM Delivery', 'Technical Leadership'];
+
+const certs = [
+  { name: 'Certified Application Developer', badge: 'CAD', org: 'ServiceNow', featured: true },
+  { name: 'Certified Implementation Specialist – ITSM', badge: 'CIS-ITSM', org: 'ServiceNow', featured: true },
+  { name: 'Certified System Administrator', badge: 'CSA', org: 'ServiceNow', featured: false },
+  { name: 'Micro-Certification – Configure the CMDB', badge: '', org: 'ServiceNow', featured: false },
+  { name: 'C1 English', badge: '', org: 'Cambridge English', featured: false },
+];
+---
+
+<section class="skills section" id="skills">
+  <div class="container">
+    <p class="section-eyebrow">03 / Toolkit</p>
+    <h2 class="section-title">The stack I reach for</h2>
+
+    <div class="skills__grid">
+      <!-- Left: Skill tags -->
+      <div class="skills__tags-col">
+        <!-- Primary skills -->
+        <div class="skills__primary">
+          {primarySkills.map((skill) => (
+            <span class="skills__tag skills__tag--primary">{skill}</span>
+          ))}
+        </div>
+
+        {skillGroups.map((group) => (
+          <div class="skills__group">
+            <div class="skills__group-header">/ {group.name.toUpperCase()}</div>
+            <div class="skills__tag-list">
+              {group.skills.map((skill) => (
+                <span class="skills__tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Right: Certifications -->
+      <div class="skills__certs-col">
+        <div class="skills__certs-label">/ CERTIFICATIONS</div>
+        <div class="skills__certs">
+          {certs.map((cert) => (
+            <div class:list={['skills__cert', { 'skills__cert--featured': cert.featured }]}>
+              <div class:list={['skills__cert-icon', { 'skills__cert-icon--featured': cert.featured }]}>
+                {cert.badge ? cert.badge.slice(0, 3) : cert.name.slice(0, 2).toUpperCase()}
+              </div>
+              <div class="skills__cert-info">
+                <div class="skills__cert-name">
+                  {cert.name}
+                  {cert.badge && <span class="skills__cert-badge">{cert.badge}</span>}
+                </div>
+                <div class="skills__cert-org">{cert.org}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills__grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 48px;
+    align-items: flex-start;
+  }
+
+  /* Primary skills */
+  .skills__primary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  /* Skill groups */
+  .skills__group {
+    margin-bottom: 24px;
+  }
+
+  .skills__group-header {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .skills__tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skills__tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    font-size: 13px;
+    color: var(--ink-2);
+    transition: border-color 0.2s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease);
+  }
+
+  .skills__tag:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .skills__tag--primary {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    font-weight: 500;
+  }
+
+  .skills__tag--primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  /* Certifications */
+  .skills__certs-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .skills__certs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .skills__cert {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: border-color 0.2s var(--ease);
+  }
+
+  .skills__cert--featured {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(184, 89, 59, 0.04), rgba(184, 89, 59, 0.08));
+  }
+
+  .skills__cert-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--paper-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+
+  .skills__cert-icon--featured {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .skills__cert-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .skills__cert-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    background: var(--paper-2);
+    border-radius: 100px;
+    color: var(--muted);
+  }
+
+  .skills__cert-org {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .skills__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

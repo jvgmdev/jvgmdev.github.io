@@ -1,0 +1,50 @@
+---
+const interests = [
+  'Linux',
+  'IoT & hardware',
+  'Open source',
+  'Nature & outdoors',
+  'Photography (on hiatus)',
+  'Languages: ES native / EN C1 / LSE',
+];
+---
+
+<div class="interests">
+  <div class="container">
+    <div class="interests__strip">
+      {interests.map((interest) => (
+        <span class="interests__chip">{interest}</span>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .interests {
+    padding: 32px 0;
+  }
+
+  .interests__strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 32px;
+    border-top: 1px dashed var(--border);
+    justify-content: center;
+  }
+
+  .interests__chip {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+    transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+  }
+
+  .interests__chip:hover {
+    border-color: var(--border-strong);
+    color: var(--ink-2);
+  }
+</style>

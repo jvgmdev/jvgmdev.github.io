@@ -1,0 +1,185 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes.map((note) => ({
+    params: { slug: note.id },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<Layout title={`${note.data.title} | Juan Victor González`}>
+  <Nav />
+  <main>
+    <article class="note-page section">
+      <div class="container">
+        <a href="/#notes" class="note-page__back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          Back to notes
+        </a>
+
+        <div class="note-page__meta">
+          <span>{note.data.date}</span>
+          <span>·</span>
+          <span>{note.data.readTime}</span>
+          <span>·</span>
+          <span class="note-page__category">{note.data.category}</span>
+        </div>
+
+        <h1 class="note-page__title">{note.data.title}</h1>
+
+        {note.data.placeholder && (
+          <div class="note-page__placeholder">
+            This is a placeholder note. Content coming soon.
+          </div>
+        )}
+
+        <div class="note-page__content">
+          <Content />
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .note-page {
+    padding-top: 48px;
+  }
+
+  .note-page__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    transition: color 0.2s var(--ease);
+  }
+
+  .note-page__back:hover {
+    color: var(--accent);
+  }
+
+  .note-page__meta {
+    display: flex;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  .note-page__category {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .note-page__title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin-bottom: 32px;
+    max-width: 720px;
+  }
+
+  .note-page__placeholder {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    padding: 16px 20px;
+    background: var(--paper-2);
+    border-radius: var(--radius-sm);
+    margin-bottom: 32px;
+  }
+
+  .note-page__content {
+    max-width: 680px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+
+  .note-page__content :global(h2) {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 48px 0 16px;
+    color: var(--ink);
+  }
+
+  .note-page__content :global(h3) {
+    font-size: 19px;
+    font-weight: 500;
+    margin: 36px 0 12px;
+    color: var(--ink);
+  }
+
+  .note-page__content :global(p) {
+    margin-bottom: 20px;
+  }
+
+  .note-page__content :global(a) {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .note-page__content :global(code) {
+    font-family: var(--mono);
+    font-size: 0.9em;
+    background: var(--paper-2);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .note-page__content :global(pre) {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 20px 24px;
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .note-page__content :global(pre code) {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  .note-page__content :global(blockquote) {
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    margin: 24px 0;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .note-page__content :global(ul),
+  .note-page__content :global(ol) {
+    padding-left: 24px;
+    margin-bottom: 20px;
+  }
+
+  .note-page__content :global(li) {
+    margin-bottom: 8px;
+  }
+
+  .note-page__content :global(em) {
+    color: var(--muted);
+  }
+</style>

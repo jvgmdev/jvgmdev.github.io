@@ -1,0 +1,336 @@
+---
+---
+
+<section class="experience section" id="experience">
+  <div class="container">
+    <div class="experience__header">
+      <div>
+        <p class="section-eyebrow">01 / Experience</p>
+        <h2 class="section-title">Five years building on <span class="serif-accent">ServiceNow</span></h2>
+      </div>
+    </div>
+
+    <div class="experience__timeline">
+      <!-- DXC -->
+      <div class="experience__item">
+        <div class="experience__date">
+          <span class="experience__date-range">MAR 2025 - PRESENT</span>
+          <div class="experience__current">
+            <span class="experience__current-dot pulse-accent"></span>
+            <span class="experience__current-label">Current</span>
+          </div>
+        </div>
+        <div class="experience__body">
+          <h3 class="experience__role">ServiceNow Technical Lead</h3>
+          <div class="experience__company">
+            <span class="experience__company-name">DXC Technology</span>
+          </div>
+          <p class="experience__desc">Technical Lead embedded in a client delivery team. Senior development, code reviews, and technical decisions across ITSM and CSM workstreams.</p>
+        </div>
+      </div>
+
+      <!-- Thirdera -->
+      <div class="experience__item">
+        <div class="experience__date">
+          <span class="experience__date-range">SEP 2023 - MAR 2025</span>
+          <span class="experience__duration">1 yr 7 mos</span>
+        </div>
+        <div class="experience__body">
+          <h3 class="experience__role">ServiceNow Technical Consultant</h3>
+          <div class="experience__company">
+            <span class="experience__company-name">Thirdera</span>
+            <span class="experience__company-loc">· Málaga, Spain</span>
+          </div>
+          <p class="experience__desc">ServiceNow Technical Consultant delivering implementation projects for international clients.</p>
+        </div>
+      </div>
+
+      <!-- Indra -->
+      <div class="experience__item">
+        <div class="experience__date">
+          <span class="experience__date-range">APR 2021 - AUG 2023</span>
+          <span class="experience__duration">2 yrs 5 mos</span>
+        </div>
+        <div class="experience__body">
+          <h3 class="experience__role">Multiple Roles</h3>
+          <div class="experience__company">
+            <span class="experience__company-name">Indra</span>
+            <span class="experience__company-loc">· Málaga, Spain</span>
+          </div>
+
+          <!-- Collapsed sub-roles -->
+          <div class="experience__subroles" id="indra-subroles">
+            <button class="experience__toggle" id="indra-toggle" aria-expanded="false" aria-controls="indra-list">
+              <svg class="experience__toggle-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              Show all 5 roles
+            </button>
+
+            <div class="experience__subrole-list" id="indra-list">
+              <div class="experience__subrole">
+                <div class="experience__subrole-header">
+                  <strong>ITSM Implementation Coordination</strong>
+                  <span class="experience__subrole-date">Mar 2023 - Aug 2023</span>
+                </div>
+                <p class="experience__desc">Technical coordination for an ITSM module implementation. Defined the technical approach and worked across teams to hit go-live.</p>
+              </div>
+
+              <div class="experience__subrole">
+                <div class="experience__subrole-header">
+                  <strong>Technical Quick Response Team Lead</strong>
+                  <span class="experience__subrole-date">Oct 2022 - Mar 2023</span>
+                </div>
+                <p class="experience__desc">Led a team of three for an international telco client. User story gathering, development, and delivery using agile methodologies.</p>
+              </div>
+
+              <div class="experience__subrole">
+                <div class="experience__subrole-header">
+                  <strong>ServiceNow Developer</strong>
+                  <span class="experience__subrole-date">Feb 2022 - Oct 2022</span>
+                </div>
+                <p class="experience__desc">Built features across PPM, ServicePortal, ITSM, CSM, and Integrations. Business Rules, Client Scripts, UI components, and scripting day to day.</p>
+                <div class="experience__chips">
+                  <span class="chip">ServiceNow Core</span>
+                  <span class="chip">ServicePortal</span>
+                  <span class="chip">ITSM</span>
+                  <span class="chip">CSM</span>
+                  <span class="chip">Integration Hub</span>
+                  <span class="chip">Business Rules</span>
+                  <span class="chip">Client Scripts</span>
+                  <span class="chip">UI Actions</span>
+                  <span class="chip">UI Policies</span>
+                  <span class="chip">ACL</span>
+                  <span class="chip">Script Includes</span>
+                </div>
+              </div>
+
+              <div class="experience__subrole">
+                <div class="experience__subrole-header">
+                  <strong>Technical Support Specialist</strong>
+                  <span class="experience__subrole-date">Jul 2021 - Feb 2022</span>
+                </div>
+                <p class="experience__desc">Technical support for an international telco client. Incident resolution and custom developments in ServiceNow Core.</p>
+              </div>
+
+              <div class="experience__subrole">
+                <div class="experience__subrole-header">
+                  <strong>Internship</strong>
+                  <span class="experience__subrole-date">Apr 2021 - Jun 2021</span>
+                </div>
+                <p class="experience__desc">ServiceNow development fundamentals, ITSM, and CSA basics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+  }
+
+  .experience__timeline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience__item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    transition: background 0.3s var(--ease);
+  }
+
+  .experience__item:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .experience__item:hover {
+    background: linear-gradient(90deg, transparent, rgba(184, 89, 59, 0.02));
+  }
+
+  /* Date column */
+  .experience__date {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .experience__date-range {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .experience__current {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .experience__current-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .experience__current-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .experience__duration {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* Body column */
+  .experience__role {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+  }
+
+  .experience__company {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .experience__company-name {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .experience__company-loc {
+    color: var(--muted);
+  }
+
+  .experience__desc {
+    font-size: 15px;
+    color: var(--ink-2);
+    max-width: 620px;
+    line-height: 1.55;
+  }
+
+  .experience__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  /* Sub-roles */
+  .experience__subroles {
+    margin-top: 16px;
+  }
+
+  .experience__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    padding: 8px 0;
+    cursor: pointer;
+  }
+
+  .experience__toggle-chevron {
+    transition: transform 0.25s var(--ease);
+  }
+
+  .experience__toggle[aria-expanded='true'] .experience__toggle-chevron {
+    transform: rotate(90deg);
+  }
+
+  .experience__subrole-list {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 12px;
+    border-left: 2px dashed var(--border);
+    padding-left: 20px;
+  }
+
+  .experience__subrole-list--open {
+    display: flex;
+  }
+
+  .experience__subrole {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .experience__subrole:last-child {
+    border-bottom: none;
+  }
+
+  .experience__subrole-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .experience__subrole-header strong {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .experience__subrole-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .experience__item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .experience__subrole-header {
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('indra-toggle')!;
+  const list = document.getElementById('indra-list')!;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = list.classList.toggle('experience__subrole-list--open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    const text = isOpen ? 'Hide roles' : 'Show all 5 roles';
+    toggle.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent = `\n              ${text}\n            `;
+      }
+    });
+  });
+</script>

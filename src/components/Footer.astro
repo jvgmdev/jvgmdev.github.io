@@ -1,0 +1,51 @@
+---
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <span class="footer__copy">&copy; 2026 Juan Victor González · Málaga</span>
+      <span class="footer__meta">
+        Built with care · <a href="https://github.com/jvgmdev/jvgmdev.github.io" target="_blank" rel="noopener noreferrer">View source ↗</a> · Colophon
+      </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 40px 0 48px;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer__copy {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .footer__meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .footer__meta a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s var(--ease);
+  }
+
+  .footer__meta a:hover {
+    color: var(--accent);
+  }
+</style>
